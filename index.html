@@ -14,7 +14,6 @@
             --accent-pink: #ffe3e8;
             --accent-purple: #e0d4f7;
             --button-orange: #ff6f00;
-            --button-green: #2e7d32;
             --card-bg: #ffffff;
             --text-dark: #1e272c;
             --text-muted: #546e7a;
@@ -232,7 +231,7 @@
 
         .buy-now-section {
             text-align: center;
-            margin-bottom: 25px;
+            margin-bottom: 5px;
         }
 
         .price-display {
@@ -295,69 +294,37 @@
         .divider:not(:empty)::before { margin-right: .5em; }
         .divider:not(:empty)::after { margin-left: .5em; }
 
-        form {
+        /* Direct Contact Information Cards */
+        .direct-contact-box {
+            margin-top: 15px;
             display: flex;
             flex-direction: column;
             gap: 12px;
-        }
-
-        input, textarea {
-            width: 100%;
-            padding: 14px 16px;
-            border: 2px solid #e2e8f0;
-            border-radius: 12px;
-            font-family: inherit;
-            font-size: 0.95rem;
-            font-weight: 600;
-            outline: none;
-            transition: border-color 0.2s ease;
-        }
-
-        input:focus, textarea:focus {
-            border-color: #bfa6f2;
-        }
-
-        .btn-green {
-            background-color: var(--button-green);
-            color: white;
-            box-shadow: 0 6px 20px rgba(46, 125, 50, 0.25);
-            margin-top: 8px;
-        }
-
-        .btn-green:hover {
-            background-color: #246527;
-            transform: translateY(-2px);
-        }
-
-        /* Direct Contact Information Cards */
-        .direct-contact-box {
-            margin-top: 25px;
-            display: flex;
-            flex-direction: column;
-            gap: 10px;
         }
 
         .contact-link-card {
             display: flex;
             align-items: center;
-            gap: 12px;
-            padding: 12px 16px;
+            gap: 14px;
+            padding: 16px;
             background: #f8f9fa;
             border-radius: 12px;
             text-decoration: none;
             color: var(--text-dark);
             font-weight: 600;
-            font-size: 0.95rem;
+            font-size: 1rem;
             border: 1px solid #e9ecef;
-            transition: background 0.2s ease;
+            transition: all 0.2s ease;
         }
 
         .contact-link-card:hover {
             background: #f1f3f5;
+            border-color: #bfa6f2;
+            transform: scale(1.01);
         }
 
         .contact-icon {
-            font-size: 1.25rem;
+            font-size: 1.4rem;
         }
 
         footer {
@@ -479,32 +446,21 @@
 
             <!-- Right Panel -->
             <div class="deal-panel">
-                <div class="panel-header">Secure This Domain</div>
+                <div class="panel-header">Interested in this Domain?</div>
                 <div class="panel-body">
                     
                     <div class="buy-now-section">
                         <div class="price-display">$51,000 USD</div>
                         <a href="mailto:info.dineshkumarjain@gmail.com?subject=Inquiry%20regarding%20icecreamkart.com" class="btn btn-orange">
-                            Instant Purchase
+                            Get In Touch
                             <span class="btn-subtext">(Inquire via Email)</span>
                         </a>
                     </div>
 
-                    <div class="divider">OR MAKE AN OFFER</div>
-
-                    <form id="secureOfferForm" action="https://formspree.io/f/your-id-here" method="POST">
-                        <input type="text" name="buyer_name" placeholder="Name" required>
-                        <input type="email" name="buyer_email" placeholder="Email" required>
-                        <input type="number" name="buyer_offer" placeholder="Offer Price (USD $)" min="5000" required>
-                        <textarea name="buyer_message" rows="3" placeholder="Message"></textarea>
-                        
-                        <button type="submit" class="btn btn-green">Submit Offer</button>
-                    </form>
-
-                    <div class="divider">CONTACT OWNER DIRECTLY</div>
+                    <div class="divider">OR CONTACT OWNER DIRECTLY</div>
 
                     <div class="direct-contact-box">
-                        <a href="mailto:info.dineshkumarjain@gmail.com" class="contact-link-card">
+                        <a href="mailto:info.dineshkumarjain@gmail.com?subject=Inquiry%20regarding%20icecreamkart.com" class="contact-link-card">
                             <span class="contact-icon">✉️</span>
                             <span>info.dineshkumarjain@gmail.com</span>
                         </a>
@@ -527,15 +483,5 @@
             </div>
         </footer>
     </div>
-
-    <script>
-        document.getElementById('secureOfferForm').addEventListener('submit', function(e) {
-            const currentAction = this.getAttribute('action');
-            if(currentAction.includes('your-id-here')) {
-                e.preventDefault();
-                alert("🎉 Form layout looks perfect! To begin collecting active lead emails directly into your inbox, swap out 'your-id-here' in the code with a unique form handler ID from Formspree or Formspark.");
-            }
-        });
-    </script>
 </body>
 </html>
